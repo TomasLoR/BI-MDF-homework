@@ -1,0 +1,21 @@
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix visitor: <http://example.org/visitor/> .
+@prefix ticket: <http://example.org/ticket/> .
+
+# {Visitor}
+visitor:1 rdf:type ex:visitor ;
+          ex:given_name "Alice"@en ;
+          ex:family_name "Johnson"@en ;
+          ex:age "28"^^xsd:integer ;
+          ex:satisfaction_level "4"^^xsd:nonNegativeInteger ;
+	    ex:has_purchased ticket:546372819 .
+
+visitor:2 rdf:type ex:visitor ;
+          ex:given_name "Bob"@en ;
+          ex:family_name "Brown"@en ;
+          ex:age "35"^^xsd:integer ;
+          ex:satisfaction_level "5"^^xsd:nonNegativeInteger ;
+	    ex:has_purchased ticket:564738291 .

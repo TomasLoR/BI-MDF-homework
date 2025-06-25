@@ -1,0 +1,3 @@
+uri,given_name,family_name,age,satisfaction_level,has_purchased
+http://example.org/visitor/1,Alice,Johnson,28,4,http://example.org/tickets/546372819
+http://example.org/visitor/2,Bob,Brown,35,5,http://example.org/tickets/564738291

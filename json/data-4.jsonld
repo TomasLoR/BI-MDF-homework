@@ -1,0 +1,61 @@
+{
+    "@context": {
+		"ex": "http://example.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+		"zoo": "http://example.org/zoo/",
+		"ticket": "http://example.org/ticket/",
+        "caretaker": "http://example.org/caretaker/",
+        "type": "@type",
+        "uri": "@id",
+        "name": {
+            "@id": "ex:name",
+            "@container": "@language"
+        },
+        "address": {
+            "@id": "ex:address",
+            "@container": "@language"
+        },
+		"has_sold": {
+            "@id": "ex:has_sold",
+            "@type": "@id"
+        },
+		"has_employed": {
+            "@id": "ex:has_employed",
+            "@type": "@id"
+        }
+    },
+    "@graph": [
+        {
+            "type": "ex:zoo",
+            "uri": "zoo:city_zoo",
+            "name": {
+				"en": "City Zoo"
+			},
+            "address": {
+				"en": "123 Main St, City"
+			},
+			"has_sold": [
+				"ticket:546372819"
+			],
+			"has_employed": [
+				"caretaker:1"
+			]
+        },
+        {
+            "type": "ex:zoo",
+            "uri": "zoo:wildlife_park",
+            "name": {
+				"en": "Wildlife Park"
+			},
+            "address": {
+				"en": "1456 Park Ave, Town"
+			},
+			"has_sold": [
+				"ticket:564738291"
+			],
+			"has_employed": [
+				"caretaker:2"
+			]
+        }
+    ]
+}

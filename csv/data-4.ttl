@@ -1,0 +1,20 @@
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix zoo: <http://example.org/zoo/> .
+@prefix ticket: <http://example.org/ticket/> .
+@prefix caretaker: <http://example.org/caretaker/> .
+
+
+zoo:city_zoo rdf:type ex:zoo ;
+             ex:name "City Zoo"@en ;
+             ex:address "123 Main St, City"@en ;
+	     ex:has_sold ticket:546372819;
+	     ex:has_employed caretaker:1 .
+
+zoo:wildlife_park rdf:type ex:Zoo ;
+                  ex:name "Wildlife Park"@en ;
+                  ex:address "456 Park Ave, Town"@en ;
+		  ex:has_sold ticket:564738291;
+		  ex:has_employed caretaker:2 .

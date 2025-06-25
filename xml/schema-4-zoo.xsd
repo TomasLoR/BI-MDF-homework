@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="schema-6-langStr-include.xsd"/>
+  
+  <xs:element name="uri" type="xs:anyURI" />
+  <xs:element name="name" type="langStr" />
+  <xs:element name="address" type="langStr" />
+  <xs:element name="has_sold" type="xs:anyURI" />
+  <xs:element name="has_employed" type="xs:anyURI" />
+
+  <xs:element name="zoo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="uri" />
+        <xs:element ref="name" />
+		<xs:element ref="address" />
+		<xs:element ref="has_sold" maxOccurs="unbounded" minOccurs="0" />
+        <xs:element ref="has_employed" maxOccurs="unbounded" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="zoos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="zoo" maxOccurs="unbounded" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

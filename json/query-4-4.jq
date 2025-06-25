@@ -1,0 +1,1 @@
+.["@graph"] | map(select(.type == "ex:zoo" and .name."en" == "Wildlife Park") | .has_employed) | length

@@ -1,0 +1,1 @@
+.["@graph"] | map(select(.age < 30) | {given_name: .given_name["en"], family_name: .family_name["en"], age})

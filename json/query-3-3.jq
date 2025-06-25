@@ -1,0 +1,1 @@
+.["@graph"] | map(select(.price >= 16)) | length

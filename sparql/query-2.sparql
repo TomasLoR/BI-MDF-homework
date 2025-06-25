@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ex: <http://example.org/vocabulary/>
+
+PREFIX visitor: <http://example.org/Visitor/>
+PREFIX caretaker: <http://example.org/Caretaker/>
+PREFIX ticket: <http://example.org/Ticket/>
+PREFIX zoo: <http://example.org/Zoo/>
+
+# Contruct a graph (triplet) that shows how old people visit zoos.
+
+CONSTRUCT {
+  ?zoo rdf:value ?age .
+}
+WHERE {
+  ?zoo rdf:type ex:Zoo ;
+       ex:has_sold ?ticket .
+
+  ?ticket rdf:type ex:Ticket;
+          ex:purchased_by ?visitor .
+
+  ?visitor rdf:type ex:Visitor;
+           ex:age ?age .
+}

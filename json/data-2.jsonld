@@ -1,0 +1,70 @@
+{
+    "@context": {
+		"ex": "http://example.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "caretaker": "http://example.org/caretaker/",
+		"zoo": "http://example.org/zoo/",
+        "type": "@type",
+        "uri": "@id",
+        "given_name": {
+            "@id": "ex:given_name",
+            "@container": "@language"
+        },
+        "family_name": {
+            "@id": "ex:family_name",
+            "@container": "@language"
+        },
+		"age": {
+            "@id": "ex:age",
+            "@type": "xsd:integer"
+        },
+		"specialization": {
+            "@id": "ex:specialization",
+            "@type": "@language"
+        },
+		"works_at": {
+            "@id": "ex:works_at",
+            "@type": "@id"
+        }
+    },
+    "@graph": [
+        {
+            "type": "ex:caretaker",
+            "uri": "caretaker:1",
+            "given_name": {
+				"en": "Michael"
+			},
+			"family_name": {
+				"en": "Clark"
+			},
+			"age": 40,
+			"specialization": "Mammals",
+			"works_at": "zoo:city_zoo"
+        },
+        {
+            "type": "ex:caretaker",
+            "uri": "caretaker:2",
+            "given_name": {
+				"en": "Emily"
+			},
+			"family_name": {
+				"en": "Davis"
+			},
+			"age": 28,
+			"specialization": "Birds",
+			"works_at": "zoo:wildlife_park"
+        },
+		{
+            "type": "ex:caretaker",
+            "uri": "caretaker:3",
+            "given_name": {
+				"en": "Thomas"
+			},
+			"family_name": {
+				"en": "Oak"
+			},
+			"age": 21,
+			"specialization": "Fishes"
+        }
+    ]
+}

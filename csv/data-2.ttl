@@ -1,0 +1,27 @@
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix caretaker: <http://example.org/caretaker/> .
+@prefix zoo: <http://example.org/zoo/> .
+
+
+caretaker:1 rdf:type ex:caretaker ;
+            ex:given_name "Michael"@en ;
+            ex:family_name "Clark"@en ;
+            ex:age "40"^^xsd:integer ;
+            ex:specialization "Mammals"@en ;
+	    ex:works_at zoo:city_zoo .
+
+caretaker:2 rdf:type ex:caretaker ;
+            ex:given_name "Emily"@en ;
+            ex:family_name "Davis"@en ;
+            ex:age "28"^^xsd:integer ;
+            ex:specialization "Birds"@en ;
+	    ex:works_at zoo:wildlife_park .
+
+caretaker:3 rdf:type ex:caretaker ;
+            ex:given_name "Thomas"@en ;
+            ex:family_name "Oak"@en ;
+            ex:age "21"^^xsd:integer ;
+            ex:specialization "Fishes"@en .

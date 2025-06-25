@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zoos xsi:noNamespaceSchemaLocation="schema_4_zoo.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <zoo>
+	<uri>http://example.org/zoos/city_zoo</uri>
+    <name xml:lang="en">City Zoo</name>
+    <address xml:lang="en">123 Main St, City</address>
+    <has_sold>http://example.org/tickets/546372819</has_sold>
+	<has_employed>http://example.org/caretakers/1</has_employed>
+  </zoo>
+  
+  <zoo>
+	<uri>http://example.org/zoos/wildlife_park</uri>
+    <name xml:lang="en">Wildlife Park</name>
+    <address xml:lang="en">456 Park Ave, Town</address>
+    <has_sold>http://example.org/tickets/564738291</has_sold>
+	<has_employed>http://example.org/caretakers/2</has_employed>
+  </zoo>
+</zoos>

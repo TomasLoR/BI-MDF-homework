@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/public-contracts-schema.json",
+  "type": "object",
+  "title": "Caretakers",
+  "properties": {
+    "@graph": {
+      "type": "array",
+      "title": "Caretaker",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uri": {
+            "type": "string",
+            "format": "@id"
+          },
+          "given_name": {
+            "type": "object",
+            "required": [
+              "en"
+            ],
+            "properties": {
+              "en": {
+                "type": "string"
+              }
+            }
+          },
+          "family_name": {
+            "type": "object",
+            "required": [
+              "en"
+            ],
+            "properties": {
+              "en": {
+                "type": "string"
+              }
+            }
+          },
+          "age": {
+            "type": "integer"
+          },
+          "specialization": {
+            "type": "object",
+            "required": [
+              "en"
+            ],
+            "properties": {
+              "en": {
+                "type": "string"
+              }
+            }
+          },
+          "works_at": {
+            "type": "string",
+            "format": "@id"
+          }
+        },
+        "required": [
+          "type",
+          "uri",
+          "given_name",
+          "family_name",
+          "age",
+          "specialization"
+        ]
+      }
+    }
+  },
+  "required": [
+    "@graph"
+  ]
+}

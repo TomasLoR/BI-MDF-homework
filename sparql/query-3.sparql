@@ -1,0 +1,21 @@
+PREFIX ex: <http://example.org/vocabulary/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+PREFIX visitor: <http://example.org/Visitor/>
+PREFIX caretaker: <http://example.org/Caretaker/>
+PREFIX ticket: <http://example.org/Ticket/>
+PREFIX zoo: <http://example.org/Zoo/>
+
+# [SELECT]: Select names, surnames and specialiaztions of caretakers that are not employed.
+
+SELECT ?givenName ?familyName ?specialization
+WHERE {
+  ?caretaker rdf:type ex:Caretaker ;
+             ex:given_name ?givenName ;
+             ex:family_name ?familyName ;
+             ex:specialization ?specialization .
+  
+  FILTER NOT EXISTS {
+    ?zoo ex:has_employed ?caretaker .
+  }
+}

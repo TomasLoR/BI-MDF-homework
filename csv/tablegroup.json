@@ -1,0 +1,300 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en"
+        }
+    ],
+    "@type": "TableGroup",
+    "@id": "https://example.org/tablegroup.json",
+    "dc:description": "Zoos informations",
+    "tables": [
+        {
+            "@id": "data_1.csv-metadata.json",
+            "@type": "Table",
+            "url": "data_1.csv",
+            "tableSchema": {
+                "@type": "Schema",
+                "columns": [
+                    {
+                        "@type": "Column",
+                        "name": "uri",
+                        "titles": "URI",
+                        "dc:description": "URI of the visitor.",
+                        "required": true,
+                        "datatype": "anyURI",
+						"propertyUrl": "http://example.org/visitor"
+                    },
+                    {
+                        "@type": "Column",
+                        "name": "given_name",
+                        "titles": "given_name",
+                        "dc:description": "First name of the visitor.",
+                        "required": true,
+                        "datatype": "string",
+						"lang": "en",
+						"propertyUrl": "http://example.org/given_name"
+                    },
+                    {
+                        "@type": "Column",
+                        "name": "family_name",
+                        "titles": "family_name",
+                        "dc:description": "Surname of the visitor.",
+                        "required": true,
+						"datatype": "string",
+                        "lang": "en",
+						"propertyUrl": "http://example.org/family_name"
+                    },
+                    {
+                        "@type": "Column",
+                        "name": "age",
+                        "titles": "age",
+                        "dc:description": "Age of the visitor.",
+                        "required": true,
+						"datatype": "integer",
+                        "propertyUrl": "http://example.org/age"
+                    },
+                    {
+                        "@type": "Column",
+                        "name": "satisfaction_level",
+                        "titles": "satisfaction_level",
+                        "dc:description": "Satisfaction level of the visitor",
+                        "datatype": "integer",
+						"propertyUrl": "http://example.org/satisfaction_level"
+                    },
+                    {
+                        "@type": "Column",
+                        "name": "has_purchased",
+                        "titles": "has_purchased",
+                        "dc:description": "Ticket that the visitor has purchased.",
+                        "required": true,
+						"datatype": "anyURI",
+						"propertyUrl": "http://example.org/has_purchased"
+                    }
+                ],
+                "primaryKey": "uri",
+                "foreignKeys": [
+                    {
+                        "columnReference": "has_purchased",
+                        "reference": {
+                            "resource": "data_3.csv",
+                            "columnReference": "uri"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@id": "data_2.csv-metadata.json",
+            "@type": "Table",
+            "url": "data_2.csv",
+            "tableSchema": {
+                "@type": "Schema",
+                "columns": [
+                    {
+                        "@type": "Column",
+                        "name": "uri",
+                        "titles": "uri",
+                        "dc:description": "URI of the caretaker.",
+                        "required": true,
+                        "datatype": "anyURI",
+						"propertyUrl": "http://example.org/caretaker"
+                    },
+                    {
+                        "@type": "Column",
+                        "name": "given_name",
+                        "titles": "given_name",
+                        "dc:description": "First name of the caretaker.",
+                        "required": true,
+                        "datatype": "string",
+						"lang": "en",
+						"propertyUrl": "http://example.org/given_name"
+                    },
+					{
+                        "@type": "Column",
+                        "name": "family_name",
+                        "titles": "family_name",
+                        "dc:description": "Surname of the caretaker.",
+                        "required": true,
+						"datatype": "string",
+                        "lang": "en",
+						"propertyUrl": "http://example.org/family_name"
+                    },
+					{
+                        "@type": "Column",
+                        "name": "age",
+                        "titles": "age",
+                        "dc:description": "Age of the caretaker.",
+                        "required": true,
+						"datatype": "integer",
+                        "propertyUrl": "http://example.org/age"
+                    },
+                    {
+                        "@type": "Column",
+                        "name": "specialization",
+                        "titles": "specialization",
+                        "dc:description": "Work specialization of the caretaker.",
+                        "required": true,
+						"datatype": "string",
+                        "lang": "en",
+						"propertyUrl": "http://example.org/specialization"
+                    },
+					{
+                        "@type": "Column",
+                        "name": "works_at",
+                        "titles": "works_at",
+                        "dc:description": "Zoo in which the caretaker works.",
+						"datatype": "anyURI",
+                        "propertyUrl": "http://example.org/works_at"
+                    },
+					
+                ],
+                "primaryKey": "uri",
+                "foreignKeys": [
+                    {
+                        "columnReference": "works_at",
+                        "reference": {
+                            "resource": "data_4.csv",
+                            "columnReference": "uri"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@id": "data_3.csv-metadata.json",
+            "@type": "Table",
+            "url": "data_3.csv",
+            "tableSchema": {
+                "@type": "Schema",
+                "columns": [
+                    {
+                        "@type": "Column",
+                        "name": "uri",
+                        "titles": "uri",
+                        "dc:description": "URI of the ticket.",
+						"required": true,
+						"datatype": "anyURI",
+						"propertyUrl": "http://example.org/ticket"
+                    },
+                    {
+                        "@type": "Column",
+                        "name": "id_number",
+                        "titles": "id_number",
+                        "dc:description": "Identification number of the ticket.",
+                        "required": true,
+						"datatype": "integer",
+                        "propertyUrl": "http://example.org/id_number"
+                    },
+					{
+                        "@type": "Column",
+                        "name": "purchased_by",
+                        "titles": "purchased_by",
+                        "dc:description": "Visitor that purchased the ticket.",
+						"required": true,
+						"datatype": "anyURI",
+						"propertyUrl": "http://example.org/purchased_by"
+					},
+					{
+                        "@type": "Column",
+                        "name": "sold_by",
+                        "titles": "sold_by",
+                        "dc:description": "Zoo that sold the ticket.",
+						"required": true,
+						"datatype": "anyURI",
+						"propertyUrl": "http://example.org/sold_by"
+					}					
+                ],
+                "primaryKey": "uri",
+                "foreignKeys": [
+                    {
+                        "columnReference": "purchased_by",
+                        "reference": {
+                            "resource": "data_1.csv",
+                            "columnReference": "uri"
+                        }
+                    },
+					{
+                        "columnReference": "sold_by",
+                        "reference": {
+                            "resource": "data_4.csv",
+                            "columnReference": "uri"
+                        }
+                    }
+                ]
+            }
+        },
+		{
+            "@id": "data_4.csv-metadata.json",
+            "@type": "Table",
+            "url": "data_4.csv",
+            "tableSchema": {
+                "@type": "Schema",
+                "columns": [
+                    {
+                        "@type": "Column",
+                        "name": "uri",
+                        "titles": "uri",
+                        "dc:description": "URI of the zoo.",
+						"required": true,
+						"datatype": "anyURI",
+						"propertyUrl": "http://example.org/zoo"
+                    },
+                    {
+                        "@type": "Column",
+                        "name": "name",
+                        "titles": "name",
+                        "dc:description": "Official name of the zoo",
+                        "required": true,
+						"datatype": "string",
+						"lang": "en",
+                        "propertyUrl": "http://example.org/name"
+                    },
+                    {
+                        "@type": "Column",
+                        "name": "address",
+                        "titles": "address",
+                        "dc:description": "Official address of the zoo",
+                        "required": true,
+						"datatype": "string",
+						"lang": "en",
+                        "propertyUrl": "http://example.org/address"
+                    },
+					{
+                        "@type": "Column",
+                        "name": "has_sold",
+                        "titles": "has_sold",
+                        "dc:description": "Tickets that the zoo sold.",
+						"datatype": "anyURI",
+						"propertyUrl": "http://example.org/has_sold"
+					},
+					{
+                        "@type": "Column",
+                        "name": "has_employed",
+                        "titles": "has_employed",
+                        "dc:description": "Caretakers that the zoo employed.",
+						"datatype": "anyURI",
+						"propertyUrl": "http://example.org/has_employed"
+					}					
+                ],
+                "primaryKey": "uri",
+                "foreignKeys": [
+                    {
+                        "columnReference": "has_sold",
+                        "reference": {
+                            "resource": "data_3.csv",
+                            "columnReference": "uri"
+                        }
+                    },
+					{
+                        "columnReference": "has_employed",
+                        "reference": {
+                            "resource": "data_2.csv",
+                            "columnReference": "uri"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

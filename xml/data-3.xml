@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tickets xsi:noNamespaceSchemaLocation="schema_3_ticket.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ticket>
+	<uri>http://example.org/tickets/546372819</uri>
+    <ticket_number>546372819</ticket_number>
+    <price>15.99</price>
+    <purchased_by>http://example.org/visitors/1</purchased_by>
+    <sold_by>http://example.org/zoos/city_zoo</sold_by>
+  </ticket>
+  
+  <ticket>
+	<uri>http://example.org/tickets/564738291</uri>
+    <ticket_number>564738291</ticket_number>
+    <price>20.50</price>
+    <purchased_by>http://example.org/visitors/2</purchased_by>
+    <sold_by>http://example.org/zoos/wildlife_park</sold_by>
+  </ticket>
+</tickets>

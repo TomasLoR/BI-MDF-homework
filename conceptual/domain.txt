@@ -1,0 +1,156 @@
+####################################################################################################
+## [Person]
+# {given name}
+-> Property
+	-> given_name
+-> Type
+	-> Text
+-> Name
+	-> given name
+-> Description
+	-> Person's given name.
+
+# {family name}
+-> Property
+	-> family_name
+-> Type
+	-> Text
+-> Name
+	-> family name
+-> Description
+	-> Person's family name.
+
+# {age}
+-> Property
+	-> age
+-> Type
+	-> Integer
+-> Name
+	-> age
+-> Description
+	-> Person's age.
+####################################################################################################
+## [Caretaker]
+# {specialization}
+-> Property
+	-> specialization
+-> Type
+	-> Text
+-> Name
+	-> specialization
+-> Description
+	-> Caretaker's field of speciality.
+
+# {conceptual link: employment}
+-> Link
+	-> works_at
+-> Type
+	-> Zoo
+-> Name
+	-> works at
+-> Description
+	-> The link between the Caretaker and the Zoo referring to their working relation.
+####################################################################################################
+## [Visitor]
+# {satisfaction level}
+-> Property
+	-> satisfaction_level
+-> Type
+	-> Integer
+-> Name
+	-> satisfaction level
+-> Description
+	-> Quantified level of visitor satisfaction.
+
+# {conceptual link: ticket purchase}
+-> Link
+	-> has_purchased
+-> Type
+	-> Ticket
+-> Name
+	-> has purchased
+-> Description
+	-> The link between the Visiter and the Ticket, referring to the purchase of the ticket.
+####################################################################################################
+## [Ticket]
+# {ticket number}
+-> Property
+	-> ticket_number
+-> Type
+	-> Integer
+-> Name
+	-> ticket number
+-> Description
+	-> Identification number of a ticket.
+
+# {price}
+-> Property
+	-> price
+-> Type
+	-> Amount
+-> Name
+	-> price
+-> Description
+	-> Price of a ticket.
+
+# {conceptual link: ticket purchase}
+-> Link
+	-> purchased_by
+-> Type
+	-> Visitor
+-> Name
+	-> purchased by
+-> Description
+	-> The link between the Ticket and the Visiter, referring to the purchase of the ticket.
+
+# {conceptual link: ticket sale}
+-> Link
+	-> sold_by
+-> Type
+	-> Zoo
+-> Name
+	-> sold by
+-> Description
+	-> The link between the Ticket and the Zoo, referring to the sale of the ticket.
+####################################################################################################
+## [Zoo]
+# {name}
+-> Property
+	-> name
+-> Type
+	-> Text
+-> Name
+	-> name
+-> Description
+	-> Official name of a Zoo.
+
+# {address}
+-> Property
+	-> address
+-> Type
+	-> Text
+-> Name
+	-> address
+-> Description
+	-> Official address of a Zoo.
+
+# {conceptual link: ticket sale}
+-> Link
+	-> has sold
+-> Type
+	-> Ticket
+-> Name
+	-> has sold
+-> Description
+	-> The link between the Zoo and the Ticket, referring to the sale of the ticket.
+
+# {conceptual link: employment}
+-> Link
+	-> has_employed
+-> Type
+	-> Caretaker
+-> Name
+	-> has employed
+-> Description
+	-> The link between the Zoo and the Caretaker, referring to their working relation.
+####################################################################################################

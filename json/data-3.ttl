@@ -1,0 +1,20 @@
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix ticket: <http://example.org/ticket/> .
+@prefix visitor: <http://example.org/visitor/> .
+@prefix zoo: <http://example.org/zoo/> .
+
+# {Ticket}
+ticket:546372819 rdf:type ex:ticket ;
+                 ex:id_number "546372819"^^xsd:integer ;
+                 ex:price "15.99"^^xsd:decimal ;
+		 ex:purchased_by visitor:1 ;
+		 ex:sold_by zoo:city_zoo .
+	   
+ticket:564738291 rdf:type ex:ticket ;
+                 ex:id_number "564738291"^^xsd:integer ;
+                 ex:price "20.50"^^xsd:decimal ;
+		 ex:purchased_by visitor:2 ;
+		 ex:sold_by zoo:wildlife_park .

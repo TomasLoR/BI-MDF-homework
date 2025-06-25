@@ -1,0 +1,5 @@
+(: Q1 Does caretaker that has specialization "Mammals" exist? :)
+(: This query checks if any caretaker specializes in "Mammals" by searching for a matching element. :)
+(: The "boolean" function returns true if found, false if not. :)
+
+boolean(//caretaker[specialization = 'Mammals'])

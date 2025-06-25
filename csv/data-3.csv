@@ -1,0 +1,3 @@
+uri,id_number,price,purchased_by,sold_by
+http://example.org/ticket/546372819,546372819,15.99,http://example.org/visitor/1,http://example.org/zoo/city_zoo
+http://example.org/ticket/564738291,564738291,20.50,http://example.org/visitor/2,http://example.org/zoo/wildlife_park

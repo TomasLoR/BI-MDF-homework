@@ -1,0 +1,1 @@
+.["@graph"] | map(select(.works_at) | {given_name: .given_name, family_name: .family_name})

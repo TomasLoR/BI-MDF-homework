@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<caretakers xsi:noNamespaceSchemaLocation="schema_2_caretaker.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <caretaker>
+	<uri>http://example.org/caretakers/1</uri>
+        <given_name xml:lang="en">Michael</given_name>
+        <family_name xml:lang="en">Clark</family_name>
+        <age>40</age>
+        <specialization xml:lang="en">Mammals</specialization>
+        <works_at>http://example.org/zoos/city_zoo</works_at>
+  </caretaker>
+  
+  <caretaker>
+	<uri>http://example.org/caretakers/2</uri>
+        <given_name xml:lang="en">Emily</given_name>
+        <family_name xml:lang="en">Davis</family_name>
+        <age>28</age>
+        <specialization xml:lang="en">Birds</specialization>
+        <works_at>http://example.org/zoos/wildlife_park</works_at>
+  </caretaker>
+  
+    <caretaker>
+	<uri>http://example.org/caretakers/3</uri>
+        <given_name xml:lang="en">Thomas</given_name>
+        <family_name xml:lang="en">Oak</family_name>
+        <age>21</age>
+        <specialization xml:lang="en">Fishes</specialization>
+  </caretaker>
+</caretakers>

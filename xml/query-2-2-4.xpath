@@ -1,0 +1,5 @@
+(: Q2 Select names, surnames and specialiaztions of caretakers that are not employed. :)
+(: This query selects the given_name, family_name, and specialization elements of caretakers who are not employed by any zoo,
+based on the absence of their URIs in the has_employed elements of any zoo element. :)
+
+//caretaker[not(//zoo/has_employed = uri)]/concat(given_name, ' ', family_name, ' - ', specialization)

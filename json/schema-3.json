@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/public-contracts-schema.json",
+  "type": "object",
+  "title": "Tickets",
+  "properties": {
+    "@graph": {
+      "type": "array",
+      "title": "Ticket",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uri": {
+            "type": "string",
+            "format": "@id"
+          },
+          "id_number": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "number",
+			"format": "double"
+          },
+          "purchased_by": {
+            "type": "string",
+            "format": "@id"
+          },
+		  "sold_by": {
+            "type": "string",
+            "format": "@id"
+          }
+        },
+        "required": [
+          "type",
+          "uri",
+          "id_number",
+          "price",
+          "purchased_by",
+		  "sold_by"
+        ]
+      }
+    }
+  },
+  "required": [
+    "@graph"
+  ]
+}

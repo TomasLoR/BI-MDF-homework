@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/public-contracts-schema.json",
+  "type": "object",
+  "title": "Visitors",
+  "properties": {
+    "@graph": {
+      "type": "array",
+      "title": "Visitor",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uri": {
+            "type": "string",
+            "format": "@id"
+          },
+          "given_name": {
+            "type": "object",
+            "required": [
+              "en"
+            ],
+            "properties": {
+              "en": {
+                "type": "string"
+              }
+            }
+          },
+          "family_name": {
+            "type": "object",
+            "required": [
+              "en"
+            ],
+            "properties": {
+              "en": {
+                "type": "string"
+              }
+            }
+          },
+          "age": {
+            "type": "integer"
+          },
+          "satisfaction_level": {
+            "type": "integer"
+          },
+          "has_purchased": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "@id"
+            }
+          }
+        },
+        "required": [
+          "type",
+          "uri",
+          "given_name",
+          "family_name",
+          "age",
+          "has_purchased"
+        ]
+      }
+    }
+  },
+  "required": [
+    "@graph"
+  ]
+}

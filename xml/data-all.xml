@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <visitors xsi:noNamespaceSchemaLocation="schema_1_visitor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <visitor>
+	<uri>http://example.org/visitors/1</uri>
+
+        <given_name xml:lang="en">Alice</given_name>
+        <family_name xml:lang="en">Johnson</family_name>
+        <age>28</age>
+
+        <satisfaction_level>4</satisfaction_level>
+        <has_purchased>http://example.org/tickets/192837465</has_purchased>
+  </visitor>
+  
+  <visitor>
+	<uri>http://example.org/visitors/2</uri>
+
+        <given_name xml:lang="en">Bob</given_name>
+        <family_name xml:lang="en">Brown</family_name>
+        <age>35</age>
+
+        <satisfaction_level>5</satisfaction_level>
+        <has_purchased>http://example.org/tickets/918273645</has_purchased>
+  </visitor>
+  </visitors>
+
+  <caretakers xsi:noNamespaceSchemaLocation="schema_2_caretaker.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <caretaker>
+	<uri>http://example.org/caretakers/1</uri>
+        <given_name xml:lang="en">Michael</given_name>
+        <family_name xml:lang="en">Clark</family_name>
+        <age>40</age>
+        <specialization xml:lang="en">Mammals</specialization>
+        <works_at>http://example.org/zoos/city_zoo</works_at>
+  </caretaker>
+  
+  <caretaker>
+	<uri>http://example.org/caretakers/2</uri>
+        <given_name xml:lang="en">Emily</given_name>
+        <family_name xml:lang="en">Davis</family_name>
+        <age>28</age>
+        <specialization xml:lang="en">Birds</specialization>
+        <works_at>http://example.org/zoos/wildlife_park</works_at>
+  </caretaker>
+  
+    <caretaker>
+	<uri>http://example.org/caretakers/3</uri>
+        <given_name xml:lang="en">Thomas</given_name>
+        <family_name xml:lang="en">Oak</family_name>
+        <age>21</age>
+        <specialization xml:lang="en">Fishes</specialization>
+  </caretaker>
+  </caretakers>
+
+  <tickets xsi:noNamespaceSchemaLocation="schema_3_ticket.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <ticket>
+	<uri>http://example.org/tickets/546372819</uri>
+    <ticket_number>546372819</ticket_number>
+    <price>15.99</price>
+    <purchased_by>http://example.org/visitors/1</purchased_by>
+    <sold_by>http://example.org/zoos/city_zoo</sold_by>
+  </ticket>
+  
+  <ticket>
+	<uri>http://example.org/tickets/564738291</uri>
+    <ticket_number>564738291</ticket_number>
+    <price>20.50</price>
+    <purchased_by>http://example.org/visitors/2</purchased_by>
+    <sold_by>http://example.org/zoos/wildlife_park</sold_by>
+  </ticket>
+  </tickets>
+
+  <zoos xsi:noNamespaceSchemaLocation="schema_4_zoo.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <zoo>
+	<uri>http://example.org/zoos/city_zoo</uri>
+    <name xml:lang="en">City Zoo</name>
+    <address xml:lang="en">123 Main St, City</address>
+    <has_sold>http://example.org/tickets/546372819</has_sold>
+	<has_employed>http://example.org/caretakers/1</has_employed>
+  </zoo>
+  
+  <zoo>
+	<uri>http://example.org/zoos/wildlife_park</uri>
+    <name xml:lang="en">Wildlife Park</name>
+    <address xml:lang="en">456 Park Ave, Town</address>
+    <has_sold>http://example.org/tickets/564738291</has_sold>
+	<has_employed>http://example.org/caretakers/2</has_employed>
+  </zoo>
+  </zoos>
+</data>

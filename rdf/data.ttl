@@ -1,0 +1,173 @@
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix visitor: <http://example.org/visitor/> .
+@prefix caretaker: <http://example.org/caretaker/> .
+@prefix ticket: <http://example.org/ticket/> .
+@prefix zoo: <http://example.org/zoo/> .
+
+########################################################################################################################################################################
+## [Classes]
+ex:person rdf:type rdfs:Class ;
+	  rdfs:label "Person"@en .
+
+ex:visitor rdfs:subClassOf ex:Person ;
+	   rdfs:label "Visitor"@en .
+
+ex:caretaker rdfs:subClassOf ex:Person ;
+	     rdfs:label "Caretaker"@en .
+
+ex:ticket rdf:type rdfs:Class ;
+	  rdfs:label "Ticket"@en .
+
+ex:zoo rdf:type rdfs:Class ;
+       rdfs:label "Zoo"@en .
+########################################################################################################################################################################
+## [Properties]
+
+# {Person}
+ex:given_name rdf:type rdf:Property ;
+	      rdfs:label "Given name"@en ;
+              rdfs:domain ex:person ;
+              rdfs:range rdf:langString .
+
+ex:family_name rdf:type rdf:Property ;
+	       rdfs:label "Family name"@en ;
+               rdfs:domain ex:person ;
+               rdfs:range rdf:langString .
+
+ex:age rdf:type rdf:Property ;
+       rdfs:domain ex:person ;
+       rdfs:range xsd:integer .
+
+# {Visitor}
+ex:satisfaction_level rdf:type rdf:Property ;
+		      rdfs:label "Satisfaction level"@en ;
+                      rdfs:domain ex:visitor ;
+                      rdfs:range xsd:nonNegativeInteger ;
+                      xsd:minInclusive "1"^^xsd:nonNegativeInteger ;
+                      xsd:maxInclusive "10"^^xsd:nonNegativeInteger .
+
+ex:has_purchased rdf:type rdf:Property ;
+	         rdfs:label "Has purchased"@en ;
+                 rdfs:domain ex:visitor ;
+                 rdfs:range ex:ticket .
+
+# {Caretaker}
+ex:specialization rdf:type rdf:Property ;
+		  rdfs:label "Specialization"@en ;
+                  rdfs:domain ex:caretaker ;
+                  rdfs:range rdf:langString .
+
+ex:works_at rdf:type rdf:Property ;
+		     rdfs:label "Works at"@en ;
+                     rdfs:domain ex:caretaker ;
+                     rdfs:range ex:zoo .
+
+# {Ticket}
+ex:id_number rdf:type rdf:Property ;
+	     rdfs:label "Id number"@en ;
+             rdfs:domain ex:ticket ;
+             rdfs:range xsd:integer .
+
+ex:price rdf:type rdf:Property ;
+	 rdfs:label "Price"@en ;
+         rdfs:domain ex:ticket ;
+         rdfs:range xsd:decimal .
+
+ex:purchased_by rdf:type rdf:Property ;
+		rdfs:label "Purchased by"@en ;
+                rdfs:domain ex:ticket ;
+                rdfs:range ex:visitor .
+
+ex:sold_by rdf:type rdf:Property ;
+		    rdfs:label "Sold by"@en ;
+                    rdfs:domain ex:ticket ;
+                    rdfs:range ex:zoo .
+
+# {Zoo}
+ex:name rdf:type rdf:Property ;
+	rdfs:label "Name"@en ;
+        rdfs:domain ex:zoo ;
+        rdfs:range rdf:langString .
+
+ex:address rdf:type rdf:Property ;
+	   rdfs:label "Address"@en ;
+           rdfs:domain ex:zoo ;
+           rdfs:range rdf:langString .
+
+ex:has_sold rdf:type rdf:Property ;
+	    rdfs:label "Has sold"@en ;
+            rdfs:domain ex:zoo ;
+            rdfs:range ex:ticket .
+
+ex:has_employed rdf:type rdf:Property ;
+		rdfs:label "Has employed"@en ;
+                rdfs:domain ex:zoo ;
+                rdfs:range ex:caretaker .
+########################################################################################################################################################################
+## Instances
+
+# {Visitor}
+visitor:1 rdf:type ex:visitor ;
+          ex:given_name "Alice"@en ;
+          ex:family_name "Johnson"@en ;
+          ex:age "28"^^xsd:integer ;
+          ex:satisfaction_level "4"^^xsd:nonNegativeInteger ;
+	  ex:has_purchased ticket:546372819 .
+
+visitor:2 rdf:type ex:visitor ;
+          ex:given_name "Bob"@en ;
+          ex:family_name "Brown"@en ;
+          ex:age "35"^^xsd:integer ;
+          ex:satisfaction_level "5"^^xsd:nonNegativeInteger ;
+	  ex:has_purchased ticket:564738291 .
+
+# {Caretaker}
+caretaker:1 rdf:type ex:caretaker ;
+            ex:given_name "Michael"@en ;
+            ex:family_name "Clark"@en ;
+            ex:age "40"^^xsd:integer ;
+            ex:specialization "Mammals"@en ;
+	    ex:works_at zoo:city_zoo .
+
+caretaker:2 rdf:type ex:caretaker ;
+            ex:given_name "Emily"@en ;
+            ex:family_name "Davis"@en ;
+            ex:age "28"^^xsd:integer ;
+            ex:specialization "Birds"@en ;
+	    ex:works_at zoo:wildlife_park .
+
+caretaker:3 rdf:type ex:caretaker ;
+            ex:given_name "Thomas"@en ;
+            ex:family_name "Oak"@en ;
+            ex:age "21"^^xsd:integer ;
+            ex:specialization "Fishes"@en .
+
+# {Ticket}
+ticket:546372819 rdf:type ex:ticket ;
+                 ex:id_number "546372819"^^xsd:integer ;
+                 ex:price "15.99"^^xsd:decimal ;
+		 ex:purchased_by visitor:1 ;
+		 ex:sold_by zoo:city_zoo .
+	   
+ticket:564738291 rdf:type ex:ticket ;
+                 ex:id_number "564738291"^^xsd:integer ;
+                 ex:price "20.50"^^xsd:decimal ;
+		 ex:purchased_by visitor:2 ;
+		 ex:sold_by zoo:wildlife_park .
+
+# {Zoo}
+zoo:city_zoo rdf:type ex:zoo ;
+             ex:name "City Zoo"@en ;
+             ex:address "123 Main St, City"@en ;
+	     ex:has_sold ticket:546372819;
+	     ex:has_employed caretaker:1 .
+
+zoo:wildlife_park rdf:type ex:Zoo ;
+                  ex:name "Wildlife Park"@en ;
+                  ex:address "456 Park Ave, Town"@en ;
+		  ex:has_sold ticket:564738291;
+		  ex:has_employed caretaker:2 .

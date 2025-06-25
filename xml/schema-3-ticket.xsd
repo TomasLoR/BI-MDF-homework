@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="schema-6-langStr-include.xsd"/>
+  
+  <xs:element name="uri" type="xs:anyURI" />
+  <xs:element name="ticket_number" type="xs:integer" />
+  <xs:element name="price" type="xs:decimal" />
+  <xs:element name="purchased_by" type="xs:anyURI" />
+  <xs:element name="sold_by" type="xs:anyURI" />
+
+  <xs:element name="ticket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="uri" />
+        <xs:element ref="ticket_number" />
+		<xs:element ref="price" />
+		<xs:element ref="purchased_by" maxOccurs="1" minOccurs="1" />
+        <xs:element ref="sold_by" maxOccurs="1" minOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="tickets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ticket" maxOccurs="unbounded" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,3 @@
+uri,name,address,has_sold,has_employed
+http://example.org/zoo/city_zoo,City Zoo,"123 Main St, City",http://example.org/ticket/546372819,http://example.org/caretaker/1
+http://example.org/zoo/wildlife_park,Wildlife Park,"1456 Park Ave, Town",http://example.org/ticket/564738291,http://example.org/caretaker/2

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="given_name" type="langStr" />
+  <xs:element name="family_name" type="langStr" />
+  <xs:element name="age" type="xs:nonNegativeInteger" />
+
+  <xs:group name="person_group">
+    <xs:sequence>
+      <xs:element ref="given_name" maxOccurs="unbounded" />
+      <xs:element ref="family_name" maxOccurs="unbounded" />
+      <xs:element ref="age" />
+    </xs:sequence>
+  </xs:group>
+</xs:schema>

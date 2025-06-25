@@ -1,0 +1,5 @@
+(: Q3 Select names, surnames and satisfaction level of visitors that have satisfaction level at least 5 and have visited "Wildlife park" zoo. :)
+(: This XPath expression selects visitors whose satisfaction level is greater than or equal to 5
+and whose has_purchased URI matches the URI of a ticket that was sold by the "Wildlife Park" zoo. :)
+
+//visitor[satisfaction_level >= 5 and //zoo[name = 'Wildlife Park']/has_sold = has_purchased]/concat(given_name, ' ', family_name, ' - ', satisfaction_level)

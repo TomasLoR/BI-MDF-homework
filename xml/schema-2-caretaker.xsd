@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="schema-6-langStr-include.xsd"/>
+  <xs:include schemaLocation="schema-5-person-include.xsd"/>
+  
+  <xs:element name="uri" type="xs:anyURI" />
+  <xs:element name="specialization" type="langStr" />
+  <xs:element name="works_at" type="xs:anyURI" />
+
+  <xs:element name="caretaker">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="uri" />
+        <xs:group ref="person_group" />
+		<xs:element ref="specialization" />
+        <xs:element ref="works_at" maxOccurs="1" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="caretakers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="caretaker" maxOccurs="unbounded" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

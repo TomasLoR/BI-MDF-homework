@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/public-contracts-schema.json",
+  "type": "object",
+  "title": "Zoos",
+  "properties": {
+    "@graph": {
+      "type": "array",
+      "title": "Zoo",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uri": {
+            "type": "string",
+            "format": "@id"
+          },
+          "name": {
+            "type": "object",
+            "required": [
+              "en"
+            ],
+            "properties": {
+              "en": {
+                "type": "string"
+              }
+            }
+          },
+          "address": {
+            "type": "object",
+            "required": [
+              "en"
+            ],
+            "properties": {
+              "en": {
+                "type": "string"
+              }
+            }
+          },
+          "has_sold": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "@id"
+            }
+          },
+		  "has_employed": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "@id"
+            }
+          }
+        },
+        "required": [
+          "type",
+          "uri",
+          "name",
+          "address"
+        ]
+      }
+    }
+  },
+  "required": [
+    "@graph"
+  ]
+}

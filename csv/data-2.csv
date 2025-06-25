@@ -1,0 +1,4 @@
+uri,given_name,family_name,age,specialization,works_at
+http://example.org/caretaker/1,Michael,Clark,40,Mammals,http://example.org/zoo/city_zoo
+http://example.org/caretaker/2,Emily,Davis,28,Birds,http://example.org/zoo/wildlife_park
+http://example.org/caretaker/3,Thomas,Oak,21,Fishes,

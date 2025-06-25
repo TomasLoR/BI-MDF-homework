@@ -1,0 +1,60 @@
+{
+    "@context": {
+        "ex": "http://example.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "visitor": "http://example.org/visitor/",
+        "ticket": "http://example.org/ticket/",
+        "type": "@type",
+        "uri": "@id",
+        "given_name": {
+            "@id": "ex:given_name",
+            "@container": "@language"
+        },
+        "family_name": {
+            "@id": "ex:family_name",
+            "@container": "@language"
+        },
+        "age": {
+            "@id": "ex:age",
+            "@type": "xsd:integer"
+        },
+        "satisfaction_level": {
+            "@id": "ex:satisfaction_level",
+            "@type": "xsd:nonNegativeInteger"
+        },
+        "has_purchased": {
+            "@id": "ex:has_purchased",
+            "@type": "@id"
+        }
+    },
+    "@graph": [
+        {
+            "type": "ex:visitor",
+            "uri": "visitor:1",
+            "given_name": {
+                "en": "Alice"
+            },
+            "family_name": {
+                "en": "Johnson"
+            },
+            "age": 28,
+            "has_purchased": [
+                "ticket:546372819"
+            ]
+        },
+        {
+            "type": "ex:visitor",
+            "uri": "visitor:2",
+            "given_name": {
+                "en": "Bob"
+            },
+            "family_name": {
+                "en": "Brown"
+            },
+            "age": 35,
+            "has_purchased": [
+                "ticket:564738291"
+            ]
+        }
+    ]
+}

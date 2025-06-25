@@ -1,0 +1,14 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ex: <http://example.org/vocabulary/>
+
+PREFIX visitor: <http://example.org/Visitor/>
+PREFIX caretaker: <http://example.org/Caretaker/>
+PREFIX ticket: <http://example.org/Ticket/>
+PREFIX zoo: <http://example.org/Zoo/>
+
+# [ASK]: Does caretaker that has specialization "Mammals" exist?
+ASK
+WHERE {
+  ?caretaker rdf:type ex:Caretaker ;
+             ex:specialization "Mammals"@en .
+}

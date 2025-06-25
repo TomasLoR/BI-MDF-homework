@@ -1,0 +1,5 @@
+(: Q4 Select URIs of caretakers that specialize in "Mammals" and are employed by the "City Zoo" :)
+(: This XPath query selects caretakers with the specialization "Mammals"
+and whose URI matches the has_employed URI of the "City Zoo". :)
+
+//caretaker[specialization = 'Mammals' and //zoo[name = 'City Zoo']/has_employed = uri]/uri

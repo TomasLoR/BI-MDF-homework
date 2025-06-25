@@ -1,0 +1,3 @@
+Q1 Does caretaker that has specialization "Mammals" exist?
+Q2 Select names, surnames and specialiaztions of caretakers that are not employed.
+Q3 Select names, surnames and satisfaction level of visitors that have satisfaction level at least 5 and have visited "Wildlife park" zoo.

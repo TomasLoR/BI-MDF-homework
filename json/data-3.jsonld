@@ -1,0 +1,45 @@
+{
+    "@context": {
+		"ex": "http://example.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+		"ticket": "http://example.org/ticket/",
+        "visitor": "http://example.org/visitor/",
+		"zoo": "http://example.org/zoo/",
+        "type": "@type",
+        "uri": "@id",
+        "id_number": {
+            "@id": "ex:id_number",
+            "@type": "xsd:integer"
+        },
+		"price": {
+            "@id": "ex:price",
+            "@type": "xsd:decimal"
+        },
+		"purchased_by": {
+            "@id": "ex:purchased_by",
+            "@type": "@id"
+        },
+		"sold_by": {
+            "@id": "ex:sold_by",
+            "@type": "@id"
+        }
+    },
+    "@graph": [
+        {
+            "type": "ex:ticket",
+            "uri": "ticket:546372819",
+            "id_number": 546372819,
+			"price": 15.99,
+			"purchased_by": "visitor:1",
+			"sold_by": "zoo:city_zoo"
+        },
+        {
+            "type": "ex:ticket",
+            "uri": "ticket:564738291",
+            "id_number": 564738291,
+			"price": 20.50,
+			"purchased_by": "visitor:2",
+			"sold_by": "zoo:wildlife_park"
+        }
+    ]
+}

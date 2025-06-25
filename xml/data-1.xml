@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<visitors xsi:noNamespaceSchemaLocation="schema_1_visitor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <visitor>
+	<uri>http://example.org/visitors/1</uri>
+
+        <given_name xml:lang="en">Alice</given_name>
+        <family_name xml:lang="en">Johnson</family_name>
+        <age>28</age>
+
+        <satisfaction_level>4</satisfaction_level>
+        <has_purchased>http://example.org/tickets/546372819</has_purchased>
+  </visitor>
+  
+  <visitor>
+	<uri>http://example.org/visitors/2</uri>
+
+        <given_name xml:lang="en">Bob</given_name>
+        <family_name xml:lang="en">Brown</family_name>
+        <age>35</age>
+
+        <satisfaction_level>5</satisfaction_level>
+        <has_purchased>http://example.org/tickets/564738291</has_purchased>
+  </visitor>
+</visitors>
